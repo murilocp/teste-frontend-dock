@@ -3,11 +3,14 @@ import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 const client = new ApolloClient({
   uri: 'https://api.github.com/graphql',
   cache: new InMemoryCache(),
+  headers: {
+    authorization: `Bearer ${process.env.REACT_APP_GITHUB_TOKEN}`,
+  },
 });
 
-const GET_USER_BY_USERNAME = gql`
-  {
-    user(login: "murilocp") {
+export const GET_REPOS_BY_USERNAME = gql`
+  query ReposByUsername($userName: String!) {
+    user(login: $userName) {
       login
       name
       avatarUrl

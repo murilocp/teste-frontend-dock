@@ -1,22 +1,33 @@
-interface IUserData {
-  login: string;
-  name: string;
-  avatarUrl: string;
-  htmlUrl: string;
+type LanguageType = {
+  node: { name: string; color: string };
+  size: number;
+};
+
+interface IRepositoryData {
+  node: {
+    id: string;
+    nameWithOwner: string;
+    description: string | null;
+    homepageUrl: string | null;
+    url: string;
+    languages: {
+      edges: LanguageType[];
+    };
+  };
 }
 
-interface IRepository {
-  id: number;
-  name: string;
-  fullName: string;
-  visibility: string;
-  language: string;
-  htmlUrl: string;
-  owner: IUserData;
+interface IReposByUserNameData {
+  user: {
+    avatarUrl: string;
+    bio: string;
+    location: string;
+    login: string;
+    name: string;
+    repositories: { edges: IRepositoryData[] };
+  };
 }
 
-interface IGithubContext {
+interface IReposContext {
+  userName: string;
   updateUserName: (userName: string) => void;
-  user: IUserData;
-  repositories: IRepository[];
 }

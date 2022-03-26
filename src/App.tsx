@@ -4,24 +4,26 @@ import { ApolloProvider } from '@apollo/client';
 
 import client from 'src/services/apollo';
 
+import { ReposProvider } from './hooks/useRepos';
+
 import Card from './components/Card';
 import Container from './components/Container';
 import SearchBar from './components/SearchBar';
-
-import { UserProvider } from './hooks/useUserData';
+import RepositoryList from './components/RepositoryList';
 
 import './global.scss';
 
 const App: React.FC = () => {
   return (
     <ApolloProvider client={client}>
-      <UserProvider>
+      <ReposProvider>
         <Container>
           <Card>
             <SearchBar />
           </Card>
+          <RepositoryList />
         </Container>
-      </UserProvider>
+      </ReposProvider>
     </ApolloProvider>
   );
 };

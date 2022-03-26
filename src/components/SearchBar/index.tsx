@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 
 import { FaSearch, FaGithubAlt } from 'react-icons/fa';
+
+import { useRepos } from 'src/hooks/useRepos';
+
 import './styles.scss';
-import { useGithub } from 'src/hooks/useUserData';
 
 const SearchBar: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
-  const { updateUserName } = useGithub();
+  const { updateUserName } = useRepos();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
