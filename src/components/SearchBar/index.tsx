@@ -6,9 +6,16 @@ import { useRepos } from 'src/hooks/useRepos';
 
 import './styles.scss';
 
+/**
+ * Componente que representa o Card com o formulário de busca de usuários.
+ */
 const SearchBar: React.FC = () => {
   const { updateUserName } = useRepos();
 
+  /**
+   * Função que irá atualizar o estado global com o valor do input.
+   * @param e Evento de submit do formulário
+   */
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -20,7 +27,7 @@ const SearchBar: React.FC = () => {
     <div className='search-bar'>
       <div className='title'>
         <FaGithubAlt size={40} />
-        <h1>Explore GitHub repos</h1>
+        <h1>Repos search</h1>
       </div>
       <form onSubmit={handleSubmit}>
         <div className='input'>

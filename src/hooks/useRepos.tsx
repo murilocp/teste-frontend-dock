@@ -2,6 +2,10 @@ import React, { createContext, useState, useContext, useCallback } from 'react';
 
 const ReposContext = createContext<IReposContext>({} as IReposContext);
 
+/**
+ * Provider para armazenar o estado global. No estado, será armazenado o nome de usuário
+ * e uma função para atualizar o nome de usuário.
+ */
 const ReposProvider: React.FC = ({ children }) => {
   const [userName, setUserName] = useState('');
 
@@ -16,6 +20,9 @@ const ReposProvider: React.FC = ({ children }) => {
   );
 };
 
+/**
+ * Hook para recuperar os valores do estado global.
+ */
 function useRepos(): IReposContext {
   const context = useContext(ReposContext);
 

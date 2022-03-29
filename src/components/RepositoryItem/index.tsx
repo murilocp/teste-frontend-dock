@@ -8,6 +8,10 @@ interface IRepositoryItemProps {
   itemData: IRepositoryData;
 }
 
+/**
+ * Componente que representa o Card com as informações de cada repositório.
+ * @param itemData Dados do repositório
+ */
 const RepositoryItem: React.FC<IRepositoryItemProps> = ({ itemData }) => {
   return (
     <a href={itemData.node.url} target='_blank' rel='noreferrer'>

@@ -10,11 +10,22 @@ import RepositoryItem from '../RepositoryItem';
 import './styles.scss';
 import UserInfoCard from '../UserInfoCard';
 
+/**
+ * Componente que representa a lista de repositórios encontrados na busca.
+ * Caso não haja repositórios, exibe uma mensagem informando que não foram
+ * encontrados resultados.
+ * Também, enquanto não houver resultados, exibe uma mensagem de Loading.
+ */
 const RepositoryList: React.FC = () => {
   const { userName } = useRepos();
   const [getReposByUsername, { loading, data }] =
     useLazyQuery<IReposByUserNameData>(GET_REPOS_BY_USERNAME);
 
+  /**
+   * Sempre que houverem mudanças no estado global, é feita uma nova busca com
+   * o novo valor do estado. Caso o valor do estado seja vazio, não é feita nenhuma
+   * busca.
+   */
   useEffect(() => {
     if (userName !== '') getReposByUsername({ variables: { userName } });
   }, [getReposByUsername, userName]);

@@ -1,5 +1,9 @@
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
+/**
+ * Inicializar o cliente Apollo, passando o endpoint do servidor com GraphQL,
+ * e configurando o token de autenticação para a API.
+ */
 const client = new ApolloClient({
   uri: 'https://api.github.com/graphql',
   cache: new InMemoryCache(),
@@ -8,6 +12,10 @@ const client = new ApolloClient({
   },
 });
 
+/**
+ * Query para obter os dados do usuário. Nessa query, será retornado informações do usuário,
+ * assim como seus repositórios.
+ */
 export const GET_REPOS_BY_USERNAME = gql`
   query ReposByUsername($userName: String!) {
     user(login: $userName) {

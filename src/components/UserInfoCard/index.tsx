@@ -8,6 +8,10 @@ interface IUserInfoCardProps {
   userData: IReposByUserNameData;
 }
 
+/**
+ * Componente que representa o Card com as informações do usuário.
+ * @param userData Dados do usuário
+ */
 const UserInfoCard: React.FC<IUserInfoCardProps> = ({ userData }) => {
   return (
     <div className='user-info-card'>
