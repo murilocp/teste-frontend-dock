@@ -29,7 +29,7 @@ const SearchBar: React.FC = () => {
       <Card>
         <div className='title'>
           <FaGithubAlt size={40} />
-          <h1>Repos search</h1>
+          <h1>Repository Search by Username</h1>
         </div>
         <form onSubmit={handleSubmit}>
           <div className='input'>
