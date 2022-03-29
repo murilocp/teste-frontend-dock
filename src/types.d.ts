@@ -6,9 +6,10 @@ type LanguageType = {
 interface IRepositoryData {
   node: {
     id: string;
+    createdAt: string;
+    stargazerCount: number;
     nameWithOwner: string;
     description: string | null;
-    homepageUrl: string | null;
     url: string;
     languages: {
       edges: LanguageType[];

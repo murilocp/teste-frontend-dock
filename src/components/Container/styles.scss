@@ -1,7 +1,11 @@
 div.container {
   margin: auto;
-  padding: 2em;
-  max-width: 1180px;
+  padding: 2rem;
+  max-width: 1024px;
+}
 
-  height: 100vh;
+@media screen and (max-width: 425px) {
+  div.container {
+    padding: 1rem;
+  }
 }

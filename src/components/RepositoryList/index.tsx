@@ -5,6 +5,10 @@ import { GET_REPOS_BY_USERNAME } from 'src/services/apollo';
 
 import { useRepos } from 'src/hooks/useRepos';
 import Card from '../Card';
+import RepositoryItem from '../RepositoryItem';
+
+import './styles.scss';
+import UserInfoCard from '../UserInfoCard';
 
 const RepositoryList: React.FC = () => {
   const { userName } = useRepos();
@@ -24,20 +28,22 @@ const RepositoryList: React.FC = () => {
   }
 
   return (
-    <Card>
+    <div className='repository-list'>
       {data && data.user ? (
         <>
-          <div>User: {String(data.user.name)}</div>
+          <UserInfoCard userData={data} />
           <ul>
             {data?.user?.repositories.edges.map(repo => (
-              <li>{repo.node.nameWithOwner}</li>
+              <RepositoryItem itemData={repo}>
+                {repo.node.nameWithOwner}
+              </RepositoryItem>
             ))}
           </ul>
         </>
       ) : (
-        <div>Nenhum resultado encontrado</div>
+        <Card>Nenhum resultado encontrado</Card>
       )}
-    </Card>
+    </div>
   );
 };
 

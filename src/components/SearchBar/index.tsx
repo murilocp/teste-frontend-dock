@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { FaSearch, FaGithubAlt } from 'react-icons/fa';
 
@@ -7,22 +7,13 @@ import { useRepos } from 'src/hooks/useRepos';
 import './styles.scss';
 
 const SearchBar: React.FC = () => {
-  const [loading, setLoading] = useState(false);
-
   const { updateUserName } = useRepos();
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    try {
-      setLoading(true);
-      e.preventDefault();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-      const userName = e.currentTarget.search.value;
-      updateUserName(userName);
-    } catch (e) {
-      console.log(e);
-    } finally {
-      setLoading(false);
-    }
+    const userName = e.currentTarget.search.value;
+    updateUserName(userName);
   };
 
   return (
@@ -40,7 +31,7 @@ const SearchBar: React.FC = () => {
             aria-label='Barra de busca'
           />
           <button type='submit'>
-            {loading ? <></> : <FaSearch size={20} />}
+            <FaSearch size={20} />
           </button>
         </div>
       </form>

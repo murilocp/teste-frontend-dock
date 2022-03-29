@@ -1,0 +1,129 @@
+a {
+  text-decoration: none;
+  color: inherit;
+
+  cursor: pointer;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+  }
+
+  span {
+    font-style: none;
+  }
+
+  div.repository-item-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 1rem;
+    height: 100%;
+
+    box-shadow: -7px 7px 7px -1px rgba(0, 0, 0, 0.15);
+
+    background-color: white;
+    font-style: none;
+
+    div.repository-item-box__header {
+      display: flex;
+      justify-content: space-between;
+
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+
+      span.repository-item-box__stars {
+        display: flex;
+        align-items: center;
+
+        margin-right: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        svg {
+          margin-top: 1px;
+        }
+      }
+    }
+
+    div.repository-item-box__content {
+      hyphens: auto;
+      word-break: break-word;
+
+      font-size: 0.8rem;
+      font-style: italic;
+
+      max-height: 47px;
+      overflow-y: hidden;
+
+      margin-bottom: 1rem;
+    }
+
+    div.repository-item-box__footer {
+      div.repository-item-box__createdAt {
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      div.repository-item-box__languages {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        font-size: 0.7rem;
+
+        div.repository-item-box__languages-item {
+          display: flex;
+          align-items: center;
+          margin-right: 0.5rem;
+          margin-bottom: 0.25rem;
+        }
+
+        span.repository-item-box__language-circle {
+          display: inline-block;
+
+          border-radius: 50%;
+
+          width: 12px !important;
+          height: 12px;
+          margin-right: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  a {
+    div.repository-item-box {
+      div.repository-item-box__header {
+        word-break: break-all;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  a {
+    div.repository-item-box {
+      padding: 0.75rem;
+
+      div.repository-item-box__header {
+        font-size: 1rem;
+        flex-direction: column;
+
+        span.repository-item-box__stars {
+          margin-top: 0.25rem;
+        }
+      }
+    }
+  }
+}

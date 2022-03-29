@@ -20,9 +20,10 @@ export const GET_REPOS_BY_USERNAME = gql`
         edges {
           node {
             id
+            createdAt
             description
-            homepageUrl
             nameWithOwner
+            stargazerCount
             owner {
               login
             }

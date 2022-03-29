@@ -3,7 +3,7 @@ div.title {
   align-items: center;
   justify-content: center;
 
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 
   svg {
     margin-right: 8px;
@@ -17,41 +17,49 @@ div.input {
   border-bottom-right-radius: 0;
 
   margin: 0 auto;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
+
+  input {
+    font-size: 1rem;
+    width: 80%;
+
+    padding: 0.75rem 8px;
+
+    border: 2px solid #e5e5e5;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  input:focus {
+    outline: none;
+
+    border: 2px solid #222;
+  }
+
+  button {
+    background: #222;
+    color: white;
+    width: 20%;
+
+    border: none;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: #22222295;
+  }
 }
 
-input {
-  font-size: 1rem;
-  width: 80%;
-
-  padding: 0.75em 8px;
-
-  border: 2px solid #e5e5e5;
-
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-input:focus {
-  outline: none;
-
-  border: 2px solid #222;
-}
-
-button {
-  background: #222;
-  color: white;
-  width: 20%;
-
-  border: none;
-
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-
-  transition: background-color 0.2s ease-in-out;
-}
-
-button:hover {
-  cursor: pointer;
-  background-color: #22222295;
+@media screen and (max-width: 320px) {
+  div.title {
+    h1 {
+      font-size: 1.75rem;
+    }
+  }
 }
