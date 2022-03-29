@@ -106,6 +106,12 @@ a {
     div.repository-item-box {
       div.repository-item-box__header {
         word-break: break-all;
+        font-size: 1rem;
+        flex-direction: column;
+
+        span.repository-item-box__stars {
+          margin-top: 0.25rem;
+        }
       }
     }
   }
@@ -115,15 +121,6 @@ a {
   a {
     div.repository-item-box {
       padding: 0.75rem;
-
-      div.repository-item-box__header {
-        font-size: 1rem;
-        flex-direction: column;
-
-        span.repository-item-box__stars {
-          margin-top: 0.25rem;
-        }
-      }
     }
   }
 }

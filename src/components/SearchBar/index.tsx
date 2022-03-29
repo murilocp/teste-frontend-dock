@@ -3,6 +3,7 @@ import React from 'react';
 import { FaSearch, FaGithubAlt } from 'react-icons/fa';
 
 import { useRepos } from 'src/hooks/useRepos';
+import Card from '../Card';
 
 import './styles.scss';
 
@@ -25,23 +26,25 @@ const SearchBar: React.FC = () => {
 
   return (
     <div className='search-bar'>
-      <div className='title'>
-        <FaGithubAlt size={40} />
-        <h1>Repos search</h1>
-      </div>
-      <form onSubmit={handleSubmit}>
-        <div className='input'>
-          <label htmlFor='search' hidden />
-          <input
-            id='search'
-            placeholder='Search username'
-            aria-label='Barra de busca'
-          />
-          <button type='submit'>
-            <FaSearch size={20} />
-          </button>
+      <Card>
+        <div className='title'>
+          <FaGithubAlt size={40} />
+          <h1>Repos search</h1>
         </div>
-      </form>
+        <form onSubmit={handleSubmit}>
+          <div className='input'>
+            <label htmlFor='search' hidden />
+            <input
+              id='search'
+              placeholder='Search username'
+              aria-label='Barra de busca'
+            />
+            <button type='submit'>
+              <FaSearch size={20} />
+            </button>
+          </div>
+        </form>
+      </Card>
     </div>
   );
 };
