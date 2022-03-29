@@ -24,3 +24,7 @@ yarn start
 ```
 
 Abra [http://localhost:3000](http://localhost:3000) no navegador para ver o resultado.
+
+Para visualizar o projeto rodando em um servidor da [`Vercel`](https://vercel.com/), acesse:
+
+[https://teste-frontend-dock.vercel.app/](https://teste-frontend-dock.vercel.app/)
